@@ -1,10 +1,10 @@
 module.exports.connectDB = function () {
     var mysql = require('mysql');
     var connection = mysql.createConnection({
-        host: '209.99.16.168',
-        user: 'proxa91n_admin',
-        password: 'QDmyD+F?]Y{E',
-        database: 'proxa91n_fp_payload'
+        host: process.env.db_host,
+        user: process.env.db_user,
+        password: process.env.db_password,
+        database: process.env.db_name
     });
 
     connection.connect(function (err) {
